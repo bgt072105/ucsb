@@ -59,7 +59,7 @@ assert ("MATH3A" in dict1) == True
 assert dict1["MATH3A"] == 1
 
 def computeGrade(percentage):
-    if type(percentage) == int:    
+    if type(percentage) == int or type(percentage) == float:    
         if percentage >= 90 and percentage <= 100:
             return 'A'
         elif percentage < 90 and percentage >= 80:
@@ -108,7 +108,7 @@ assert computeGrade(0) == "F"
 from collections import namedtuple
 
 def updateBookPrice(percentIncrease, bookObject):
-    new_price = bookObject.price * (1 + percentIncrease / 100)
+    new_price = bookObject.price * (1 + percentIncrease)
     updated_book = Book(bookObject.title, bookObject.author, new_price)
     return updated_book
 ''' Function that takes in a namedtuple Book object (bookObject)
